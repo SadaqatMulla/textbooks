@@ -7,7 +7,6 @@
       "es2017.object",
       "es2017.string"
     ],
-    "outDir": "ts_build",
     "moduleResolution": "node",
     "strict": true,
     "types" : [],
@@ -20,5 +19,8 @@
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "typeAcquisition": {
+    "include": ["content/shared/templates.d.ts"]
+  }
 }

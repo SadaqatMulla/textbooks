@@ -7,8 +7,8 @@
 
 ::: column.grow
 
-For as long as humans exist, we have looked to the sky and tried to explain life
-on Earth using the motion of stars, planets and the moon.
+For as long as humans have existed, we have looked to the sky and tried to explain life on Earth
+using the motion of stars, planets and the moon.
 
 Ancient Greek astronomers were the first to discover that all celestial objects
 move on regular paths, called __orbits__. They believed that these orbits are
@@ -48,12 +48,12 @@ center. This means that they can be drawn using a [compass](gloss:compass):
 {.reveal(when="compass")} There are three important measurements related to
 circles that you need to know:
 
-* {.reveal(when="compass" delay="1000")} The [{.step-target.pill.b.red}radius](target:r)
+* {.reveal(when="compass" delay="1000")} The [{.red.b}radius](target:r)
   is the distance from the center of a circle to its outer rim.
-* {.reveal(when="compass" delay="4000")} The [{.step-target.pill.b.blue}diameter](target:d)
+* {.reveal(when="compass" delay="4000")} The [{.blue.b}diameter](target:d)
   is the distance between two opposite points on a circle. It goes through its
   center, and its length is [[twice|half|the same as]] the radius.
-* {.reveal(when="blank-0")} The [{.step-target.pill.b.green}circumference](target:c) 
+* {.reveal(when="blank-0")} The [{.green.b}circumference](target:c) 
   (or perimeter) is the distance around a circle.
 
 :::
@@ -88,7 +88,7 @@ on forever without any specific pattern:
 > goals: unroll
 
 Here is a wheel with diameter 1. As you “unroll” the circumference, you can see
-that its length is exactly [[`pi`|`2 * pi`|3]]:
+that its length is exactly [[`pi`|`2 pi`|3]]:
 
     figure: include svg/wheel.svg
     x-gesture(target="#wheel .wheel" slide="100,0")
@@ -159,7 +159,7 @@ circular or spherical, and reducing their surface area.
 
 ::: column(width=320)
 
-    x-select.area-tabs
+    x-select.segmented
       div(data-value="0") Triangle
       div(data-value="1") Square
       div(data-value="2") Pentagon
@@ -177,10 +177,10 @@ circular or spherical, and reducing their surface area.
 
 ### The Area of a Circle
 
-But how do we actually calculate the area of a circle? Let’s try the same
-technique we used for [finding the area quadrilaterals](/course/polyhedra/quadrilaterals):
-we cut the shape into multiple different parts, and then rearrange them into a
-different shape we already know the area of (e.g. a rectangle or a triangle).
+But how do we actually calculate the area of a circle? Let’s try the same technique we used for
+[finding the area of quadrilaterals](/course/polyhedra/quadrilaterals): we cut the shape into
+multiple different parts, and then rearrange them into a different shape we already know the area
+of (e.g. a rectangle or a triangle).
 
 The only difference is that, because circles are curved, we have to use some
 approximations:
@@ -347,14 +347,17 @@ If Pi is normal, it means that you can think of _any_ string of digits, and it
 will appear somewhere in its digits. Here you can search the first one
 million digits of Pi – do they contain your birthday?
 
-    .box
-      .box-title: h3 One Million Digits of Pi
-      .box-body.pi-controls
-        | Search for a string of digits:
-        input(type="text" pattern="[0-9]*" maxlength=12)
-        .pi-warning
-      x-pi-scroll.box-body
-        .first-row 3.
+::: .box.f-red.pi-box
+#### One Million Digits of Pi
+
+    .pi-controls
+      | Search for a string of digits:
+      input(type="text" pattern="[0-9]*" maxlength=12)
+      .pi-warning
+    x-pi-scroll
+      .first-row 3.
+
+:::
 
 ---
 > id: pi-movies
@@ -542,16 +545,14 @@ of a [__unit circle__](gloss:unit-circle) (a circle with radius 1).
 
 ::: column.grow
 
-A _{span.var-action}full circle_ has circumference
+A [full circle](action:setState(0)) has circumference
 _{x-equation.small(solution="2 π" keys="+ × π" numeric)}_.
 
-{.reveal(when="eqn-0")} For a _{span.var-action}half circle rotation_, the
-corresponding distance along the circumference is
-_{x-equation.small(solution="π" keys="+ × π" numeric)}_.
+{.reveal(when="eqn-0")} For a [half circle rotation](action:setState(1)), the corresponding distance
+along the circumference is _{x-equation.small(solution="π" keys="+ × π" numeric)}_.
 
-{.reveal(when="eqn-1")} For a _{span.var-action}quarter circle rotation_, the
-distance along the circumference is
-_{x-equation.small(solution="π/2" keys="+ × π frac" numeric)}_.
+{.reveal(when="eqn-1")} For a [quarter circle rotation](action:setState(2)), the distance along the
+circumference is _{x-equation.small(solution="π/2" keys="+ × π frac" numeric)}_.
 
 {.reveal(when="eqn-2")} And so on: this way of measuring angles is called
 [__radians__](gloss:radians) (you could remember this as “radius units”).
@@ -586,9 +587,13 @@ You can write the radians value either as a multiple of _π_, or as just a singl
 decimal number. Can you fill in this table of equivalent angle sizes in degrees
 and radians?
 
+::: .overflow-wrap.overflow-table
+
 | __{.m-red}degrees__ | 0 | 60 | _{x-equation.small(solution="360/π" keys="π frac" numeric)}_ | 180 | _{x-equation.small(solution="270" keys="π frac" numeric)}_    |
 | __{.m-green}radians__   | 0 | _{x-equation.small(solution="π/3" keys="π frac" numeric)}_ | 2    | _{x-equation.small(solution="π" keys="π frac" numeric)}_ | `3/2 pi` |
 {.table-small.grid}
+
+:::
 
 ---
 > id: radians-distance
@@ -696,9 +701,8 @@ sin(30 rad) = [[-0.988]] _{span.eqn-gap}_ cos(1 rad) = [[0.54]]
 ---
 > id: small-angle
 
-Using radians has one particularly interesting advantage when using the [__Sine
-function__](gloss:sin). If `θ` is a very small angle (less than 20° or 0.3 rad),
-then `sin(θ) ≈ θ`. For example,
+Using radians has one particularly interesting advantage when using the Sine function. If `θ` is a
+very small angle (less than 20° or 0.3 rad), then `sin(θ) ≈ θ`. For example,
 
 {.text-center} sin(${x}{x|0.1|0,0.5,0.05}) `≈` ${sin(x)}…
 
@@ -749,19 +753,19 @@ need to solve more complex problems:
 
 ::: column.grow(parent="right")
 
-* {.r} A [{.red} secant](pill:secant) is a line that intersects a circle in two
+* {.r} A [{.red.b} secant](target:secant) is a line that intersects a circle at two
   points. [Continue](btn:next)
-* {.r.reveal(when="next-0")} A [{.green} chord](pill:chord) is a line segment
+* {.r.reveal(when="next-0")} A [{.green.b} chord](target:chord) is a line segment
   whose endpoints lie on the circumference of a circle. [Continue](btn:next)
-* {.r.reveal(when="next-1")} A [{.blue} tangent](pill:tangent) is a line that
-  touched a circle at exactly one point. This is called the __point of
+* {.r.reveal(when="next-1")} A [{.blue.b} tangent](target:tangent) is a line that
+  touches a circle at exactly one point. This is called the __point of
   tangency__. [Continue](btn:next)
-* {.r.reveal(when="next-2")} An [{.yellow} arc](pill:arc) is a section of the
+* {.r.reveal(when="next-2")} An [{.yellow.b} arc](target:arc) is a section of the
   circumference of a circle. [Continue](btn:next)
-* {.r.reveal(when="next-3")} A [{.teal} sector](pill:sector) is a part of the
+* {.r.reveal(when="next-3")} A [{.teal.b} sector](target:sector) is a part of the
   interior of a circle, bounded by an _arc_ and _two radii_.
   [Continue](btn:next)
-* {.r.reveal(when="next-4")} Finally, a [{.purple} segment](pill:segment) is a
+* {.r.reveal(when="next-4")} Finally, a [{.purple.b} segment](target:segment) is a
   part of the interior of a circle, bounded by an _arc_ and _a chord_.
   [Continue](btn:next)
 
@@ -901,13 +905,13 @@ knowledge about arcs and sectors of a circle.
 
 ::: column.grow
 
-As you can see in the diagram, an [{.red} arc](pill:arc) is a part of the
-[[circumference|diameter|tangent]] of a circle, and a [{.yellow} sector](pill:sector)
+As you can see in the diagram, an [{.red} arc](target:arc) is a part of the
+[[circumference|diameter|tangent]] of a circle, and a [{.yellow} sector](target:sector)
 is a part of the [[interior|radius|perimeter]] of a circle.
 
 ::: .reveal(when="blank-0 blank-1")
 The arc between two points _A_ and _B_ is often written as `arc(AB)`. This
-definition is slightly ambiguous: there is a [{.purple} second arc](pill:major)
+definition is slightly ambiguous: there is a [{.purple} second arc](target:major)
 that connects _A_ and _B_ but goes the other way around the circle.
 
 The smaller of the two arcs is called the __minor arc__, and the larger one is
@@ -924,17 +928,16 @@ both arcs have the same length and are [[semicircles|diameters|circumferences]].
 
 To find the length of an arc or the area of a sector, we need to know about the
 corresponding angle at the center of the circle: this is called the
-[{.blue} central angle](pill:angle).
+[{.blue.b} central angle](target:angle).
 
-Notice how the arc, sector and angle all take up the _same proportion_ of a
-full circle. For example, if the [{.blue} central angle](pill:angle) is
-_{span.var-action}90°_, it takes up [[one quarter|one half|one third]] of a
-[{.teal} full circle](pill:fangle).
+Notice how the arc, sector and angle all take up the _same proportion_ of a full circle. For
+example, if the [{.blue} central angle](target:angle) is [90°](action:set90Deg()), it takes up
+[[one quarter|one half|one third]] of a [{.teal} full circle](target:fangle).
 
 ::: .reveal(when="blank-0")
-This means that the [{.red} length of the arc](pill:arc) is also `1/4` of the
-[{.purple} whole circumference](pill:circ) of the circle, and the [{.yellow} area
-of the sector](pill:sector) is `1/4` of the [{.orange} whole area](pill:area) of
+This means that the [{.red} length of the arc](target:arc) is also `1/4` of the
+[{.purple} whole circumference](target:circ) of the circle, and the [{.yellow} area
+of the sector](target:sector) is `1/4` of the [{.orange} whole area](target:area) of
 the circle.
 
 We can express this relationship in an equation:
@@ -968,14 +971,14 @@ in. For example,
 
 ::: column(width=320 parent="padded-thin")
 
-| [{.red}arc length](pill) | = | `"circumference" × c/360` |
-|                          | = | `2 π r × c/360`          |
+| [arc length](pill:red) | = | `"circumference" × c/360` |
+|                        | = | `2 π r × c/360`          |
 {.eqn-system}
 
 ::: column(width=320)
 
-| [{.yellow}sector area](pill) | = | `"circle area" × c/360` |
-|                              | = | `π r^2 × c/360`         |
+| [sector area](pill:yellow) | = | `"circle area" × c/360` |
+|                            | = | `π r^2 × c/360`         |
 {.eqn-system}
 
 :::
@@ -1001,14 +1004,14 @@ If the central angle is measured in [radians](gloss:radians) rather than
 ::: .reveal(when="blank-0")
 ::: column(width=320 parent="padded-thin")
 
-| [{.red}arc length](pill) | = | `2 π r × c/(2π)` |
-|                          | = | `r × c`          |
+| [arc length](pill:red) | = | `2 π r × c/(2π)` |
+|                        | = | `r × c`          |
 {.eqn-system}
 
 ::: column(width=320)
 
-| [{.yellow}sector area](pill) | = | `π r^2 × c/(2π)` |
-|                              | = | `1/2 r^2 c`      |
+| [sector area](pill:yellow) | = | `π r^2 × c/(2π)` |
+|                            | = | `1/2 r^2 c`      |
 {.eqn-system}
 
 :::
@@ -1049,14 +1052,13 @@ island_ on the Nile river.
 :::
 
 The mathematician [Eratosthenes](bio:eratosthenes) lived in _Alexandria_, about
-800\ km North of Swenet, where he was director of the Great Library. In the city
+800\ km north of Swenet, where he was director of the Great Library. In the city
 centre of Alexandria stood an obelisk, a tall, narrow monument with a
 pyramid-shaped top.
 
-Eratosthenes noticed that at noon on the day of the summer solstice, the obelisk
-was throwing a shadow – meaning that the sun was _not_ directly above it. He
-deduced that this was because of the curvature of the Earth, and realised it
-could be used to calculate our planet’s circumference.
+Eratosthenes noticed that at noon on the day of the summer solstice, the obelisk threw a shadow –
+meaning that the sun was _not_ directly above it. He deduced that this was because of the curvature
+of the Earth, and realised it could be used to calculate our planet’s circumference.
 
 ---
 > id: eratosthenes-1
@@ -1068,9 +1070,9 @@ The sun rays fall directly into the well, but hit the obelisk at an angle and
 cast a shadow. [Continue](btn:next)
 
 ::: .reveal(when="next-0")
-Eratosthenes measured that the [{.teal} angle](pill:angle1) of the shadow was
-7.2°. This is the same as the [{.purple} central angle](pill:angle2) of the
-[{.red} arc](pill:arc) from Alexandria to Swenet, because they are
+Eratosthenes measured that the [{.teal} angle](target:angle1) of the shadow was
+7.2°. This is the same as the [{.purple} central angle](target:angle2) of the
+[{.red} arc](target:arc) from Alexandria to Swenet, because they are
 [[alternating|vertical|corresponding]] angles.
 :::
 
@@ -1531,7 +1533,7 @@ surface area is approximately [[34,080 ± 100]]`"m"^2`.
 
 ::: column.grow
 
-A [__cone__](gloss:cone) is a 3-dimensional solid that has a circular
+A [__cone__](gloss:cone) is a three-dimensional solid that has a circular
 __{.m-red}base__. Its side “tapers upwards” as shown in the diagram, and ends
 in a single point called the __{.m-green}vertex__.
 
@@ -1614,11 +1616,10 @@ third|half|one quarter]] of the volume of the cylinder:
 ---
 > id: cone-hilbert
 
-{.i.lgrey} Note: You might think that infinitely many tiny sides as an approximation
-is a bit “imprecise”. Mathematics spent a long time trying to find a more
-straightforward way to calculate the volume of a cone. In 1900, the great
-mathematician [David Hilbert](bio:hilbert) even named it as one of the 23 most
-important unsolved problems in mathematics! Today we know that it is actually
+{.i.lgrey} Note: You might think that infinitely many tiny sides as an approximation is a bit
+“imprecise”. Mathematicians spent a long time trying to find a more straightforward way to calculate
+the volume of a cone. In 1900, the great mathematician [David Hilbert](bio:hilbert) even named it as
+one of the 23 most important unsolved problems in mathematics! Today we know that it is actually
 impossible.
 
 ---
@@ -1670,11 +1671,10 @@ _{x-equation.small(solution="π r^2" keys="+ × π sup" short-var)}_.
 
 ::: column.grow
 
-The radius of the __{.m-green}sector__ is the same as the distance from the
-rim of a cone to its vertex. This is called the __{.pill.green.step-target(data-to="s")}
-slant height *s*__ of the cone, and not the same as the normal
-__{.pill.blue.step-target(data-to="h")}height *h*__. We can find the slant
-height using [Pythagoras](gloss:pythagoras-theorem):
+The radius of the __{.m-green}sector__ is the same as the distance from the rim of a cone to its
+vertex. This is called the [{.green.b} slant height *s*](target:s) of the cone, and not the
+same as the normal [{.blue.b} height *h*](target:h). We can find the slant height using
+[Pythagoras](gloss:pythagoras-theorem):
 
 | `s^2` | `=` | _{x-equation(solution="r^2 + h^2" keys="+ × π sup")}_       |
 | `s`   | `=` | _{x-equation(solution="sqrt(r^2 + h^2)" keys="+ × sup sqrt")}_ |
@@ -1682,7 +1682,7 @@ height using [Pythagoras](gloss:pythagoras-theorem):
 
 ::: column(width=280)
 
-    x-geopad.sketch.no-background(width=280 height=200): svg
+    x-geopad.geo-sketch.no-background(width=280 height=200): svg
       circle(x="point(140, 10)" name="a" hidden)
       circle(x="point(140, 170)" name="b" hidden)
       circle(x="point(220, 170)" name="c" hidden)
@@ -1701,8 +1701,8 @@ height using [Pythagoras](gloss:pythagoras-theorem):
 
 ::: column.grow
 
-The _{span.pill.step-target.red(data-to="arc")}arc length_ of the sector is the
-same as the [[circumference|diameter|arc]] of the _{span.pill.step-target.yellow(data-to="base")}base_:
+The [{.red} arc length](target:arc) of the sector is the same as the
+[[circumference|diameter|arc]] of the [{.yellow}base](target:base):
 _{span.reveal(when="blank-0")}`2 π r`. Now we can find the area of the sector
 using the [formula](gloss:circle-sector) we derived in a previous section:_
 
@@ -1713,7 +1713,7 @@ using the [formula](gloss:circle-sector) we derived in a previous section:_
 
 ::: column(width=280)
 
-    x-geopad.sketch.no-background(width=280 height=300 style="margin-top: -20px"): svg
+    x-geopad.geo-sketch.no-background(width=280 height=300 style="margin-top: -20px"): svg
       circle(x="point(140,110)" name="c1" hidden)
       circle(x="point(140,250)" name="c2" hidden)
       circle(x="point(235,141.5)" name="a" hidden)
@@ -1782,7 +1782,7 @@ Let’s start with a hemisphere – a sphere cut in half along the equator. We a
 need a cylinder with the same radius and height as the hemisphere, but with an
 inverted cone “cut out” in the middle.
 
-As you move the slider above, you can see the cross-section of both these
+As you move the slider below, you can see the cross-section of both these
 shapes at a specific height above the base:
 
 ::: column(width=240)
@@ -1827,18 +1827,17 @@ shapes at a specific height above the base:
     x-slider(steps=100)
 
 
-{.reveal(when="slider-0")} Let us try to find the cross-sectional area of both
-these solids, at a distance __{span.pill.blue.step-target(data-to="h")}height *h*__
-above the base.
+{.reveal(when="slider-0")} Let us try to find the cross-sectional area of both these solids, at a
+distance [{.blue} height *h*](target:h) above the base.
 
 ::: column.grow
 
 {.reveal(when="slider-0")} The cross-section of the hemisphere is always a
 [[circle|ring|cylinder]].
 
-{.reveal(when="blank-0")} The __{span.pill.red.step-target(data-to="x")}radius
-*x*__ of the cross-section is part of a _{span.pill.yellow.step-target(data-to="tri")}
-right-angled triangle_, so we can use [Pythagoras](gloss:pythagoras-theorem):
+{.reveal(when="blank-0")} The [{.red} radius *x*](target:x) of the cross-section is part of a
+[{.yellow} right-angled triangle](target:tri), so we can use
+[Pythagoras](gloss:pythagoras-theorem):
 
 ::: .reveal(when="blank-0")
 {.text-center} `pill(r^2,"green","r") = pill(h^2,"blue","h1") + pill(x^2,"red","x")`.
@@ -1963,20 +1962,20 @@ is that we can’t open and “flatten” the surface of a sphere, like we did f
 cones and cylinders before.
 
 This is a particular issue when trying to create maps. Earth has a curved,
-3-dimensional surface, but every printed map has to be flat and 2-dimensional.
+three-dimensional surface, but every printed map has to be flat and two-dimensional.
 This means that Geographers have to cheat: by stretching or squishing certain
 areas.
 
 Here you can see few different types of maps, called __projections__. Try moving
 the red square, and watch what this area _actually_ looks like on a globe:
 
-    .sphere-maps
+    figure
       x-select.tabs
         .projection(data-name="mercator") Mercator
         .projection(data-name="cylindrical") Cylindrical
         .projection(data-name="robinson") Robinson
         .projection(data-name="mollweide") Mollweide
-      .map-body
+      .box.no-padding.sphere-maps
         .left
           svg.sphere-map(width=240 height=240 viewBox="0 0 240 280")
             path.outline
@@ -1989,7 +1988,7 @@ the red square, and watch what this area _actually_ looks like on a globe:
             path.grid
             path.land
             rect.map-select(x="-24" y="-24" width=48 height=48 style="cursor: move")
-          p.caption As you move the square on the map, notice how the size and shape of the #[em actual] area changes on the 3-dimensional globe.
+          p.caption As you move the square on the map, notice how the size and shape of the #[em actual] area changes on the three-dimensional globe.
     x-gesture(target="#projection" slide="50, 20")
 
 ---
@@ -2038,16 +2037,16 @@ a torch:
     x-scale-box(width=760).conics
       .row
         .active
-          p: strong Circle
+          p.no-voice: strong Circle
           include svg/circle.svg
         .hide
-          p: strong Ellipse
+          p.no-voice: strong Ellipse
           include svg/ellipse.svg
         .hide
-          p: strong Parabola
+          p.no-voice: strong Parabola
           include svg/parabola.svg
         .hide
-          p: strong Hyperbola
+          p.no-voice: strong Hyperbola
           include svg/hyperbola.svg
 
 ---
@@ -2093,10 +2092,12 @@ focal points.
 If you have a long string connected to two fixed points, you can draw a perfect
 ellipse by tracing the maximum reach of the strings:
 
-{.todo} Coming soon: Ellipses drawing interactive
+    p.todo Coming soon: Ellipses drawing interactive
+    //- figure: x-ellipse
+      x-geopad(width=600 height=400 x-axis="-6,6,1" y-axis="-4,4,1"): svg.r
+        circle.move(name="a" x="point(-2,0)" project="segment(point(-4,0),point(-0.5,0))")
+        circle.move(name="b" x="point(2,0)" project="segment(point(0.5,0),point(4,0))")
 
-    // ---
-    // > id: ellipses-1
     // You can also move the focal points around. Notice how, if they are further
     // apart, the ellipse will be [[more|less]] elongated. If they are close together,
     // it will look almost like a [[circle|parabola|trapezium]].
@@ -2238,13 +2239,13 @@ planets move, that prevents them from falling directly into the sun.
 ::: column.grow
 
 Using Newton’s laws, you can derive the path that objects take when moving under
-the force of gravity. It turns out that Planets move on ellipses, but other
+the force of gravity. It turns out that planets move on ellipses, but other
 objects like comets can travel on [parabolic](gloss:parabola) or
 [hyperbolic](gloss:hyperbola) paths: they fly close to the sun before turning
 around and shooting off into the universe, never to come back.
 
 According to legend, a falling apple inspired Newton to think about gravity. He
-was one of the most influential scientist of all time, and his ideas shaped our
+was one of the most influential scientists of all time, and his ideas shaped our
 understanding of the world for nearly 300 years – until Albert Einstein
 discovered relativity in 1905.
 

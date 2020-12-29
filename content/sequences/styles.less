@@ -152,14 +152,6 @@ figure .row x-img { margin: 8px; }
   &.s-green .bubble-arrow { border-top-color: @green; }
 }
 
-.ag-limit-box {
-  text-align: center;
-  padding: 16px 12px;
-  border-radius: 6px;
-  background: mix(@blue, white, 10%);
-  box-sizing: border-box;
-}
-
 .ag-equation { max-width: 220px;  margin: 0 auto .5em; }
 
 .money-grid td {
@@ -224,16 +216,6 @@ x-coordinate-system + .caption { margin-top: -1em; }
   .c.small { .circled(22px); font-size: 15px; background: @orange; margin: 2px; }
 }
 
-.perfect-box {
-  text-align: center;
-  padding: 16px 12px;
-  border-radius: 6px;
-  background: mix(@red, white, 10%);
-  box-sizing: border-box;
-  &:nth-child(2) { background: mix(@blue, white, 10%); }
-  &:nth-child(3) { background: mix(@green, white, 10%); }
-}
-
 .perfect-list { max-width: 660px; margin: 0 auto 1em; }
 
 .hailstone-slider {
@@ -260,8 +242,8 @@ x-coordinate-system + .caption { margin-top: -1em; }
 
   svg { position: absolute; width: 100%; height: 100%; }
   line { stroke: @light-grey; stroke-width: 2px; }
-  path { stroke: @dark-grey; stroke-width: 2px; fill: none; }
-  polygon { fill: @dark-grey; }
+  path { .theme(stroke, @dark-grey, white); stroke-width: 2px; fill: none; }
+  polygon { .theme(fill, @dark-grey, white); }
 
   img.rabbit { position: absolute; width: 10%; height: auto; }
   .n { position: absolute; right: 0; margin: 0; z-index: 1; margin-top: 13px; }
@@ -269,26 +251,6 @@ x-coordinate-system + .caption { margin-top: -1em; }
 
 .golden-spiral .stage { overflow: hidden; }
 .golden-spiral svg { margin: 0 auto 32px; transition: transform .4s linear; }
-
-.spiral-tabs {
-  display: flex;
-  margin: 0 auto .5em;
-  width: fit-content;
-
-  > * {
-    width: 100px;
-    text-align: center;
-    border: 1px solid @red;
-    border-left: none;
-    transition: color .2s, background .2s;
-    cursor: pointer;
-
-    &:first-child { border-radius: 6px 0 0 6px; border-left: 1px solid @red; }
-    &:last-child { border-radius: 0 6px 6px 0; }
-    &:hover { background: fade(@red, 20%);  }
-    &.active { color: white; background: @red; cursor: default; }
-  }
-}
 
 .spirals {
   padding-bottom: 100%;
@@ -338,14 +300,6 @@ x-coordinate-system + .caption { margin-top: -1em; }
   @media screen and (max-width: 440px) { background-size: 170vw 125vw; }
 }
 
-.fib-action {
-  .inline-block(@red);
-  margin: -3px 2px;
-  color: fade(white, 80%);
-  transition: color .2s, box-shadow .2s;
-  &:hover, &:focus { background: lighten(@red, 10%); color: white; box-shadow: @shadow-1; }
-}
-
 
 // -----------------------------------------------------------------------------
 // Pascal's Triangle
@@ -354,6 +308,7 @@ x-coordinate-system + .caption { margin-top: -1em; }
   margin: 1.5em auto;
   position: relative;
   user-select: none;
+  .theme(color, inherit, @text-dark);
 
   .r {
     display: flex;
@@ -449,7 +404,7 @@ x-coordinate-system + .caption { margin-top: -1em; }
     height: 44px;
     margin: 8px 4px;
     position: relative;
-    background: currentColor;
+    background: currentColor !important;  // Override dark mode colours
     opacity: 0.5;
     min-width: 0;
     &:hover { background: currentColor; opacity: 0.7; }

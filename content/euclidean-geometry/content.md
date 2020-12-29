@@ -35,12 +35,11 @@ _{span.reveal(when="p1 p2")} Let’s draw a semicircle around these points._
 {.reveal(when="p1 p2")} Now pick a third point that lies somewhere on the
 [circumference](target:circumf) of the semicircle.
 
-{.reveal(when="p3")} Let’s draw the [triangle](target:triangle) formed by the
-two corners of the semicircle, as well as the point you picked on the
-circumference.
+{.reveal(when="p3")} We can draw a [{.red}triangle](target:triangle) formed by the two corners of the
+semicircle, as well as the point you picked on the circumference.
 
 {.reveal(when="p3" delay=1000)} Try moving the position of the three points and
-observe what happens to the [angle](target:angle) at the top of the triangle.
+observe what happens to the [{.yellow}angle](target:angle) at the top of the triangle.
 _{span.reveal(when="move")} It seems like it is always [[90]]°!_
 _{span.reveal(when="blank-0")} This means that the triangle is
 [[right-angled|equilateral|acute]]._
@@ -144,7 +143,7 @@ capital letters.
 {.r} In Mathigon, [large, solid dots](target:move) indicate interactive points
 you can move around, while [smaller, outlined dots](target:no-move) indicate
 fixed points which you can’t move.
-_{button.next-step} Continue_
+[Continue](btn:next)
 :::
 
 ---
@@ -170,7 +169,7 @@ refer to them using two points that lie on the line, for example
 <span class="math"><mover><mi>PQ</mi><mo value="↔">↔</mo></mover></span> or
 <span class="math"><mover><mi>QP</mi><mo value="↔">↔</mo></mover></span>. The
 order of the points does not matter.
-_{button.next-step} Continue_
+[Continue](btn:next)
 
 :::
 
@@ -192,7 +191,7 @@ _{button.next-step} Continue_
 points, without extending to infinity. We can label them just like lines, but
 without arrows on the bar above: `bar(AB)` or `bar(BA)`. Like, before the order
 of the points does not matter.
-_{button.next-step} Continue_
+[Continue](btn:next)
 :::
 
 ---
@@ -215,7 +214,7 @@ they start at a point (the sun) and then keep going forever.
 
 {.r} When labelling rays, the arrow shows the direction where it extends to
 infinity, for example `vec(AB)`. This time, the order of the points _does_ matter.
-_{button.next-step} Continue_
+[Continue](btn:next)
 :::
 
 ---
@@ -236,7 +235,7 @@ _{button.next-step} Continue_
 {.r} A [__circle__](gloss:circle) is the collection of points that all have the
 same [distance](target:radius) from a point in the center. This distance is
 called the [__radius__](gloss:circle-radius).
-_{button.next-step} Continue_
+[Continue](btn:next)
 :::
 
 ---
@@ -253,12 +252,12 @@ _{button.next-step} Continue_
       path.fill.green#congruent-path(x="x.rotate(1).shift(190,10)" target="move" label="B" label-class="white")
 
 ::: column.grow
-The two shapes on the right basically look identical. They have the same size
-and shape, and we could [turn and slide](target:move) one of them to exactly
+These two shapes basically look identical. They have the same size
+and shape, and we could [{.green}turn and slide](target:move) one of them to exactly
 match up with the other. In geometry, we say that the two shapes are
 [__congruent__](gloss:congruent).
 
-The symbol for congruence is `≅`, so we would say that `A ≅ B`.
+The symbol for congruence is _{span(voice="this")}`≅`_, so we would say that `A ≅ B`.
 :::
 
 Here are a few different geometric objects – connect all pairs that are
@@ -392,7 +391,7 @@ the _father of geometry_, published the five axioms of geometry:
 
 :::
 
-::: column(width=220)
+::: column(width=220 parent="padded-thin")
 
     x-geopad(width=220 height=160): svg
       circle.move(name="a" cx=30 cy=130 target="1_point")
@@ -401,19 +400,20 @@ the _father of geometry_, published the five axioms of geometry:
 
 {.text-center }__First Axiom__  
 You can join any [two points](target:1_point) using exactly one straight
-[line segment](target:1_line).
+[{.red} line segment](target:1_line).
 
 ::: column(width=220)
 
     x-geopad(width=220 height=160): svg
-      circle.move(name="c" cx=60 cy=100 target="2_segment")
-      circle.move(name="d" cx=180 cy=60 target="2_segment")
-      path.red(x="line(c,d)")
+      circle.move(name="c" cx=60 cy=100)
+      circle.move(name="d" cx=180 cy=60)
+      path.blue(x="line(c,d)" target="2_line")
       path(x="segment(c,d)" target="2_segment")
+      path.blue.transparent(x="segment(c,d)" target="2_line")
 
 {.text-center }__Second Axiom__  
-You can extend any [line segment](target:2_segment) to an<br>
-infinite line.
+You can extend any [line segment](target:2_segment) to an
+[{.blue} infinitely long line](target:2_line).
 
 ::: column(width=220)
 
@@ -421,11 +421,11 @@ infinite line.
       circle.move(name="e" cx=120 cy=80 target="3_center" label="P")
       circle.move(name="f" cx=170 cy=130)
       path(x="segment(e,f)" label="r" target="3_radius")
-      path.red(x="circle(e,distance(e,f))" target="3_circle")
+      path.green(x="circle(e,distance(e,f))" target="3_circle")
 
 {.text-center }__Third Axiom__  
-Given a [point _P_](target:3_center) and a [distance _r_](target:3_radius), you
-can draw a [circle](target:3_circle) with centre _P_ and radius _r_.
+Given a [point _P_](target:3_center) and a [distance _r_](target:3_radius), you can draw a
+[{.green} circle](target:3_circle) with centre _P_ and radius _r_.
 
 ::: column(width=220)
 
@@ -433,34 +433,33 @@ can draw a [circle](target:3_circle) with centre _P_ and radius _r_.
       circle.move(name="x" cx=50 cy=100)
       circle(hidden name="xa" x="x.translate(point(110,80).subtract(x).rotate(pi/4).unitVector.scale(50))")
       circle(hidden name="xb" x="x.translate(point(110,80).subtract(x).rotate(-pi/4).unitVector.scale(50))")
-      path.fill.red(x="angle(xb,x,xa)")
+      path.fill.orange(x="angle(xb,x,xa)" target="4_angle")
       path.dark(x="segment(x,xa)")
       path.dark(x="segment(x,xb)")
 
       circle.move(name="y" cx=190 cy=60)
       circle(hidden name="ya" x="y.translate(point(110,80).subtract(y).rotate(pi/4).unitVector.scale(50))")
       circle(hidden name="yb" x="y.translate(point(110,80).subtract(y).rotate(-pi/4).unitVector.scale(50))")
-      path.fill.red(x="angle(yb,y,ya)")
+      path.fill.orange(x="angle(yb,y,ya)" target="4_angle")
       path.dark(x="segment(y,ya)")
       path.dark(x="segment(y,yb)")
 
 {.text-center }__Fourth Axiom__  
-Any two right angles are congruent.
+Any two [{.orange} right angles](target:4_angle) are congruent.
 
 ::: column(width=220)
 
     x-geopad(width=220 height=160): svg
-      circle.move(name="g" cx=170 cy=60 target="5_point" label="P")
-      path(name="line5" x="line(point(40,80),point(120,140))" target="5_line" label="L")
-      path.red(x="line5.parallel(g)" target="5_parallel")
+      circle.move(name="g" cx=160 cy=60 target="5_point" label="P")
+      path(name="line5" x="line(point(50,80),point(130,140))" target="5_line" label="L")
+      path.yellow(x="line5.parallel(g)" target="5_parallel")
 
 {.text-center }__Fifth Axiom__  
-Given a [line _L_](target:5_line) and a [point _P_](target:5_point) not on _L_,
-there is exactly [one line](target:5_parallel) through _P_ that is
-[parallel](gloss:parallel) to _L_.
+Given a [line _L_](target:5_line) and a [point _P_](target:5_point) not on _L_, there is exactly
+[{.yellow} one line](target:5_parallel) through _P_ that is [parallel](gloss:parallel) to _L_.
 :::
 
-{.r} _{button.next-step} Continue_
+{.r} [Continue](btn:next)
 
 ---
 > id: jefferson
@@ -486,11 +485,14 @@ Jefferson](bio:jefferson). When writing the Declaration of Independence in 1776,
 he wanted to follow a similar approach. He begins by stating a few, simple
 “axioms” and then “proves” more complex results:
 
-{div.parchment} “We hold these truths to be self-evident: that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.”
+{div.parchment.voice} “We hold these truths to be self-evident: that all men are created equal,
+that they are endowed by their Creator with certain unalienable Rights, that among these are Life,
+Liberty and the pursuit of Happiness.”
 
-{.text-center.follows} `=>`
+{.text-center.follows.no-voice} `=>`
 
-{div.parchment} We, therefore … declare, that these United Colonies are, and of right ought to be, free and independent states.”
+{div.parchment.voice} We, therefore … declare, that these United Colonies are, and of right ought
+to be, free and independent states.”
 
 This is just one example where Euclid’s ideas in mathematics have inspired
 completely different subjects.
@@ -609,15 +611,13 @@ disturb my circles”.
 {.task} Draw an [equilateral triangle](gloss:equilateral-triangle) using just a
 straight-edge and compass.
 
-To begin, draw a line segment anywhere in a box on the right. With the
-<x-target no-margins to="#equilateral .tool:nth-child(3)">line tool</x-target>
-selected, simply drag from start to end. This segment will be one of the sides
-of the triangle.
+To begin, draw a line segment anywhere in a box on the right. With the [{.no-margins} line
+tool](->#equilateral_.tool:nth-child(3)) selected, simply drag from start to end. This segment will
+be one of the sides of the triangle.
 
-{.reveal(when="segment0")} Next, draw two circles that have one of the endpoints
-of the line segments as center, and go through the other endpoint. With
-the <x-target no-margins to="#equilateral .tool:nth-child(5)">circle tool</x-target> selected,
-simply drag from one endpoint to the other.
+{.reveal(when="segment0")} Next, draw two circles that have one of the endpoints of the line
+segments as center, and go through the other endpoint. With the [{.no-margins} circle
+tool](->#equilateral_.tool:nth-child(5)) selected, simply drag from one endpoint to the other.
 
 {.reveal(when="circle1 circle2")} We already have two vertices of the triangle,
 and the third one is the intersection of the two circles. Use the line tool
@@ -693,8 +693,8 @@ temple that was _exactly twice_ the volume of the existing one.
 :::
 
 Note that _doubling the volume_ is not the same as _doubling an edge of the
-cube_. In fact, if the [[3-dimensional|2-dimensional|1-dimensional]] volume
-increases by a factor of 2, the [[1-dimensional|3-dimensional|2-dimensional]]
+cube_. In fact, if the [[three-dimensional|two-dimensional|one-dimensional]] volume
+increases by a factor of 2, the [[one-dimensional|three-dimensional|two-dimensional]]
 edge of the cube will increase by a factor of `root(2,3)`.
 
 ---
@@ -783,7 +783,7 @@ TODO
 Using straight-edge and compass is not the only way to construct geometric
 shapes. Another technique uses no tools at all: __Origami__.
 
-The word _Origami_ (折り紙) comes from the Japanese _oru_ (to fold) and _kami_
+The word _Origami_ _{span.no-voice}(折り紙)_ comes from the Japanese _oru_ (to fold) and _kami_
 (paper). The goal is to make objects out of one or more sheets of paper,
 without any additional tools like glue or scissors. You can create incredibly
 beautiful and impressive designs – all of these figures were built using nothing
@@ -824,7 +824,7 @@ extremely accurate. But with a bit of practice, you can do it yourself!
 
 ::: column.sticky-video(width=360)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/crane.mp4" poster="images/crane.jpg" width=360 height=360 controls)
+    x-video(src="https://static.mathigon.org/videos/crane.mp4" poster="images/crane.jpg" width=360 height=360 controls)
 
 ::: column.grow
 {.step.active(data-t=0)} You just need a square sheet of paper. To start, fold
@@ -944,7 +944,7 @@ developed for Origami can be incredibly useful in technology and engineering:
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/space.mp4" poster="images/space.jpg" width=300 height=225 credit="© Brigham Young University")
+    x-video(src="https://static.mathigon.org/videos/space.mp4" poster="images/space.jpg" width=300 height=225 credit="© Brigham Young University")
 
 ::: column.grow
 
@@ -971,7 +971,7 @@ and other mechanical components.
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/stents.mp4" poster="images/stents.jpg" width=300 height=225 credit="© Virtual Point")
+    x-video(src="https://static.mathigon.org/videos/stents.mp4" poster="images/stents.jpg" width=300 height=225 credit="© Virtual Point")
 
 ::: column.grow
 
@@ -1011,7 +1011,7 @@ Hiroshima University in Japan.
     // 
     // ::: column(width=300)
     // 
-    // x-video(src="https://storage.googleapis.com/mathigon-videos/stadium.mp4" poster="images/stadium.jpg" width=300 height=225 credit="© Mercedes Benz Stadium")
+    // x-video(src="https://static.mathigon.org/videos/stadium.mp4" poster="images/stadium.jpg" width=300 height=225 credit="© Mercedes Benz Stadium")
     // 
     // ::: column.grow
     // #### Stadium Roofs
@@ -1030,7 +1030,7 @@ Hiroshima University in Japan.
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/marine.mp4" poster="images/marine.jpg" width=300 height=225 credit="© Harvard University")
+    x-video(src="https://static.mathigon.org/videos/marine.mp4" poster="images/marine.jpg" width=300 height=225 credit="© Harvard University")
 
 ::: column.grow
 
@@ -1074,7 +1074,7 @@ the highest “folding ratio” in the animal kingdom:
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/wing-animation.mp4" poster="images/wing-animation.jpg" width=300 height=170 credit="© ETH Zürich")
+    x-video(src="https://static.mathigon.org/videos/wing-animation.mp4" poster="images/wing-animation.jpg" width=300 height=170 credit="© ETH Zürich")
 
 :::
 
@@ -1098,7 +1098,7 @@ self-folding camping tents.
 
 ::: column(width=320)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/dna.mp4" poster="images/dna.jpg" width=320 height=240 credit="© PyMOL")
+    x-video(src="https://static.mathigon.org/videos/dna.mp4" poster="images/dna.jpg" width=320 height=240 credit="© PyMOL")
 
 ::: column.grow
 

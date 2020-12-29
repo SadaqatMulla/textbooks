@@ -45,12 +45,12 @@ repeat it over and over again, at smaller scales.
 
 ::: column.grow
 
-One of the simplest patterns might be a [{.pill.red} line segment](target:s1),
-with [{.pill.blue} two more segments](target:s2) branching off one end. If we
+One of the simplest patterns might be a [{.red} line segment](target:s1),
+with [{.blue} two more segments](target:s2) branching off one end. If we
 repeat this pattern, both of these blue segments will also have two more
 branches at their ends.
 
-You can move the [blue dots](target:dot) to change the length and angle of all
+You can move the [{.blue} blue dots](target:dot) to change the length and angle of all
 of the branches. Then increase the number of iterations using [the
 slider](->#fern-slider) below.
 
@@ -84,7 +84,7 @@ Another famous fractal is the [__Sierpinski triangle__](gloss:sierpinski-triangl
 In this case, we start with a large, equilateral triangle, and then repeatedly
 cut smaller triangles out of the remaining parts.
 
-{.reveal(when="slider=0")} Notice how the final shape is made up of [three
+{.reveal(when="slider=0")} Notice how the final shape is made up of [{.red} three
 identical copies of itself](target:x), and each of these is made up of even
 smaller copies of the entire triangle! You could keep zooming into the triangle
 forever, and the patterns and shapes will always continue repeating.
@@ -192,8 +192,8 @@ this is what gives fractals their name: they have a __fractional dimension__.
 
 With every iteration, we remove some of the area of the Sierpinski triangle.
 If we could do this infinitely many times, there would actually be no area
-left: that’s why the Sierpinski triangle is something in-between a 2-dimensional
-area, and a 1-dimensional line.
+left: that’s why the Sierpinski triangle is something in-between a two-dimensional
+area, and a one-dimensional line.
 
 ::: .theorem
 While many fractals are _self-similar_, a better definition is that __fractals__
@@ -248,8 +248,8 @@ smaller triangles along the edge. The side-length of every triangle is
 
 {.reveal(when="blank-0")} The resulting shape is called the [__Koch
 snowflake__](gloss:koch-snowflake), named after the Swedish mathematician [Helge
-von Koch](bio:koch). Notice, once again, that [small sections](target:t2) of the
-edge of the snowflake look exactly the same as [larger sections](target:t1).
+von Koch](bio:koch). Notice, once again, that [{.blue} small sections](target:t2) of the
+edge of the snowflake look exactly the same as [{.blue} larger sections](target:t1).
 
 ::: column(width=300)
 
@@ -283,7 +283,7 @@ Snowflake is `§d = log_3(4) ≈ 1.262`._
 ---
 > id: koch-size
 
-::: tab
+::: tab(parent="sticky")
 
 #### Area _{span.check(when="blank-6")}_
 
@@ -322,8 +322,8 @@ factor of [[4]] at every step. At the same time, the area of these new triangles
 decreases by a factor of [[9]] at every step.
 
 {.reveal(when="blank-3 blank-4")}
-Let’s say that the [first triangle](->#koch-0) has an area of 1. Then the total
-area of the [next three triangles](->#koch-1) is `3 × 1/9 = 1/3`. The following
+Let’s say that the [{.purple} first triangle](->#koch-0) has an area of 1. Then the total
+area of the [{.purple} next three triangles](->#koch-1) is `3 × 1/9 = 1/3`. The following
 steps all form a [[geometric series|arithmetic series|quadratic series]],
 _{span.reveal(when="blank-5")} with common ratio [[`4/9`|`9/4`|`4/3`]]._
 
@@ -388,7 +388,7 @@ Can you come up with any other ways to create your own fractals?
 ### Menger Sponge
 
 Fractals don’t have to be “flat”, like many of the examples above. One of the
-most famous fractals that look 3-dimensional is the __Menger sponge__, named
+most famous fractals that look three-dimensional is the __Menger sponge__, named
 after the mathematician [Karl Menger](bio:menger) who first described it in 1926.
 
 ::: column(width=320 parent="right")
@@ -412,9 +412,9 @@ Menger sponge just like we did for the Koch snowflake above. In this case we get
 
 :::
 
-{.reveal(when="blank-1")} If you imagine cutting out more and more holes,
+{.reveal(when="blank-1 slider-0")} If you imagine cutting out more and more holes,
 infinitely many times, there would be no actual volume left. That’s why the cube
-is “not quite” 3-dimensional!
+is “not quite” three-dimensional!
 [Continue](btn:next)
 
 ---
@@ -504,9 +504,9 @@ _self-similar_, like other fractals we’ve seen before. In order to find
 its size, we can draw it on a grid and count the number of cells that
 it intersects with.
 
-{.r.reveal(when="slider-0")} Initially, there are __{.pill.yellow}88__
+{.r.reveal(when="slider-0")} Initially, there are [{.b}88](pill:yellow)
 intersecting cells. If we scale the coastline by a factor of 2, there are
-__{.pill.yellow}197__ intersecting cells – more than twice as many!
+[{.b}197](pill:yellow) intersecting cells – more than twice as many!
 [Continue](btn:next)
 
 {.r.reveal(when="next-0")} The size of the coastline has increased by a factor
@@ -625,9 +625,9 @@ mathematician [Wacław Sierpiński](bio:sierpinski). It can be created by starti
 with one large, equilateral triangle, and then repeatedly cutting smaller
 triangles out of its center.
 
-{.r.reveal(when="slider-0")} Wacław Sierpiński was the first mathematicians to
-think about the properties of this triangle, but it has appeared many centuries
-earlier in artwork, patterns and mosaics.
+{.r.reveal(when="slider-0")} Wacław Sierpiński was the first mathematician to think about the
+properties of this triangle, but it has appeared many centuries earlier in artwork, patterns and
+mosaics.
 
 ::: column(width=300)
 
@@ -751,12 +751,12 @@ in the grey area to create a fourth point.
 
 {.r.reveal(when="point")} Let’s play a simple game: we pick one of the vertices
 of the triangle at random, draw a line segment between our point and the vertex,
-and then find the [{.pill.red}midpoint](target:p1) of that segment.
+and then find the [{.red}midpoint](target:p1) of that segment.
 [Continue](btn:next)
 
 {.r.reveal(when="next-0")} Now we repeat the process: we pick another random
 vertex, draw the segment from our last point, and then find the
-[{.pill.green}midpoint](target:p2). Note that we colour these new points based
+[{.green}midpoint](target:p2). Note that we colour these new points based
 on the colour of the vertex of the triangle we picked.
 [Continue](btn:next)
 
@@ -786,7 +786,7 @@ distribution of dots, but in other cases, we reveal even more fractals:
 
 {.reveal(when="s1 s2 play")} Did you discover the [Sierpinski
 carpet](action:carpet()) or this [pentagonal snowflake](action:snowflake())
-based on the [__Golden ratio__](gloss:golden-ratio)?
+based on the [__golden ratio__](gloss:golden-ratio)?
 
 ---
 > id: cellular
@@ -839,8 +839,8 @@ cellular automata, for example the colours on the shell of this snail.
 ### Sierpinski Tetrahedra
 
 There are many variants of the Sierpinski triangle, and other fractals with
-similar properties and creation processes. Some look 2-dimensional, like the
-_Sierpinski Carpet_ you saw above. Others look 3-dimensional, like these
+similar properties and creation processes. Some look two-dimensional, like the
+_Sierpinski Carpet_ you saw above. Others look three-dimensional, like these
 examples:
 
 ::: column(width=320)
@@ -908,16 +908,16 @@ terms on a number line. You can change the value of `pill(x_0,"yellow","x0")`:
 Notice how the resulting sequence can behave very differently, depending on the
 starting value `x_0`:
 
-::: column.sequence-cell(width=180 parent="padded-thin")
+::: column.frame.f-blue.text-center(width=212 parent="padded-thin")
 
 If `x_0 > 1`, the sequence [[diverges|converges]]:
 _{span.reveal(when="blank-0")}it just keeps growing, up to infinity._
 
-::: column.sequence-cell(width=180)
+::: column.frame.f-blue.text-center(width=212)
 
 If `x_0` is between –1 and 1, the sequence [[converges|diverges]].
 
-::: column.sequence-cell(width=180)
+::: column.frame.f-blue.text-center(width=212)
 
 If `x_0 < -1`, the sequence [[diverges|converges]].
 
@@ -942,7 +942,7 @@ in all of mathematics.
 Let’s use the same sequence as before, `§x_n = x_(n-1)^2`, but on the complex
 plane. You can move the position of `pill(x_0,"yellow","x0")`, to see what
 happens to the following terms. If the sequence looks like it will converge,
-let’s colour the corresponding point on the plane in _{span.pill.blue}blue_:
+let’s colour the corresponding point on the plane in [blue](pill:blue):
 
     figure: x-geopad(slot="stage" width=720 height=480 x-axis="-2.2,2.2,1" y-axis="-1.5,1.5,1" axes grid padding=8 projections="no" style="margin-bottom: 24px" label-positioning="no" label-suffix=",i" axis-names="Real, Imaginary")
       canvas(width=1440 height=960)
@@ -974,7 +974,7 @@ circle with radius 1, centred at the origin)._
 > id: julia-1
 
 Now let’s make things a bit more difficult. Rather than just squaring the
-previous number, we also add a constant _{.pill.red}c_ every time (which can be
+previous number, we also add a constant [_c_](pill:red) every time (which can be
 any complex number). In other words, `§x_n = x_(n-1)^2 + c`. Do you think we’ll
 still get a circle of convergence? What other shapes do you think we might see?
 [Continue](btn:next)
@@ -1008,17 +1008,16 @@ as the value of `pill(c,"red","c")`:
             strong.var.m-blue(:show="converges" data-display="inline") Bounded!
             strong.var(:show="!converges" data-display="inline") Diverges!
 
-{div(slot="legend")} We already know what happens if
-[`c = 0`](action:animate(0,0)) – that’s the same as the example above.
-The sequence convergence as long as `x_0` lies within the unit circle.
+We already know what happens if [`c = 0`](action:animate(0,0)) – that’s the same as the example
+above. The sequence convergence as long as `x_0` lies within the unit circle.
 
-{div(slot="legend")} As soon as we change the value of _c_, something wonderful
-happens. The circle transforms into a highly complex, fractal shape.
+As soon as we change the value of _c_, something wonderful happens. The circle transforms into a
+highly complex, fractal shape.
 
-{div(slot="legend")} When [`c = –0.54 + 0.5i`](action:animate(-0.54,0.5)), the
-shape divides into infinitely many tiny elements arranged in spirals.
+When [`c = –0.54 + 0.5i`](action:animate(-0.54,0.5)), the shape divides into infinitely many tiny
+elements arranged in spirals.
 
-::: div(slot="legend")
+::: div
 In some cases, the sequence doesn’t converge to a _single
 point_ – instead it reaches a cycle of multiple points, like a triangle. These
 cycles are called __orbits__.
@@ -1029,10 +1028,9 @@ white mean the corresponding sequence __diverges__: it is not bounded, and
 eventually blows up to infinity.
 :::
 
-{div(slot="legend")} What else can you find? Have a look at the patterns when
-[`c = 0.4 + 0.21i`](action:animate(0.4,0.21)) or when
-[`c = 0.38 – 0.25i`](action:animate(0.38,-0.25)). There are also some values of
-_c_ where _every_ sequence diverges, so the entire complex plane remains white.
+What else can you find? Have a look at the patterns when [`c = 0.4 + 0.21i`](action:animate(0.4,0.21))
+or when [`c = 0.38 – 0.25i`](action:animate(0.38,-0.25)). There are also some values of _c_ where
+_every_ sequence diverges, so the entire complex plane remains white.
 
 :::
 
@@ -1040,7 +1038,7 @@ _c_ where _every_ sequence diverges, so the entire complex plane remains white.
 > id: julia-3
 
 The different shapes that are formed by colouring in the numbers are called
-[__Julia Sets__](gloss:julia-set). They were discovered independently by two
+[__Julia sets__](gloss:julia-set). They were discovered independently by two
 French mathematicians, [Gaston Julia](bio:julia) and [Pierre Fatou](bio:fatou),
 around 1918.
 
@@ -1055,19 +1053,19 @@ diverges:
 
 ::: column(width=220)
 
-    x-img(src="images/julia-1.jpg" width=220 height=165 lightbox alt="Julia Set")
+    x-img(src="images/julia-1.jpg" width=220 height=165 lightbox alt="Julia set")
 
 {.caption} `c = −0.70176 – 0.3842"i"`
 
 ::: column(width=220)
 
-    x-img(src="images/julia-2.jpg" width=220 height=165 lightbox alt="Julia Set")
+    x-img(src="images/julia-2.jpg" width=220 height=165 lightbox alt="Julia set")
 
 {.caption} `c = −0.4 + 0.6"i"`
 
 ::: column(width=220)
 
-    x-img(src="images/julia-3.jpg" width=220 height=165 lightbox alt="Julia Set")
+    x-img(src="images/julia-3.jpg" width=220 height=165 lightbox alt="Julia set")
 
 {.caption} `c = 0.285 + 0.01"i"`
 
@@ -1119,12 +1117,12 @@ remain bounded. What shapes do you expect to appear?
 ---
 > id: mandel-history
 
-This fractal is called the [__Mandelbrot Set__](gloss:mandelbrot-set), and when
+This fractal is called the [__Mandelbrot set__](gloss:mandelbrot-set), and when
 rotated by 90°, it looks almost like a person, with head, body and two arms. It
 was defined and drawn for the first time in 1978, in a research paper by the
 mathematicians Robert Brooks and Peter Matelski:
 
-    figure: x-img(src="images/mandelbrot.jpg" width=360 height=290 credit="© Princeton University Press" alt="Mandelbrot Set Drawing")
+    figure: x-img(src="images/printout.jpg" width=360 height=290 credit="© Princeton University Press" alt="Mandelbrot set drawing")
 
 A few years later, [Benoit Mandelbrot](bio:mandelbrot) used the powerful
 computers at IBM to create a much more detailed visualisation of the fractal,
@@ -1177,7 +1175,7 @@ beautiful.
 
 ::: column.grow
 
-As you move the value of [{.pill.red}c](target:c) around the Mandelbrot set,
+As you move the value of [{.red} _c_](target:c) around the Mandelbrot set,
 you might notice a curious property:
 
 * All sequences within the [main body](target:bulb0) of the Mandelbrot set

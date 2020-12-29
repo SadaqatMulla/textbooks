@@ -10,7 +10,6 @@
 Matematica a fost studiată timp de mii de ani - la prezicerea anotimpurile,
 calcularea taxelor sau pentru estimarea suprafaței unui teren agricol.
 
-
 Matematicienii din Grecia Antică, în jurul anului 500 BC, au fost uimiți de modelele 
 matematice dorindu-și astfel să le exploreze și să le explice. La început ei au studiat matematica 
 doar de amuzament, fără a avea ca scop un rezultat anume.
@@ -70,7 +69,6 @@ Dar geometria nu este utilă doar pentru a demonstra teoreme - ea există oriund
 arhitectură, tehnologie și design. Avem nevoie de geometrie peste tot, de la măsurarea distanțelor
 până la construcția zgârie-norilor sau lansarea sateliților în spațiu. Iată câteva exemple suplimentare:
 
-
 ::: column(width=200)
 
     x-img(src="images/pyramids.jpg" credit="© Ricardo Liberato" width=200 height=200)
@@ -113,7 +111,6 @@ care orbitează Pământul.
 În acest curs, precum și în următoarele vei învăța despre o mulțime de unelte diferite și 
 tehnici geometrice descoperite de matematicieni de-a lungul multor secole. De asemenea, 
 vom vedea cum pot fi folosite aceste tehnici pentru a rezolva probleme importante din lumea reala.
-
 
 ---
 
@@ -584,12 +581,12 @@ omorât de către invadatorii romani. Ultimele sale cuvinte au fost “nu îmi d
 dreptarul și compasul.
 
 Începe prin a desena un segment de dreaptă oriunde în chenarul din dreapta. Cu
-<x-target no-margins to="#equilateral .tool:nth-child(3)">unealta linie</x-target>
+[unealta linie](->#equilateral_.tool:nth-child(3))
 selectată, trage de la început la sfârșit. Acest segment va fi una din laturile triunghiului.
 
 {.reveal(when="segment0")} Apoi desenează două cercuri care au ca centru unul din capetele segmentului
 și mergi până la celălalt capăt. Cu 
-<x-target no-margins to="#equilateral .tool:nth-child(5)">unealta cerc</x-target> selectată,
+[unealta cerc](->#equilateral_.tool:nth-child(5)) selectată,
 trage de la un capăt până la celălalt.
 
 {.reveal(when="circle1 circle2")} Deja avem două dintre vârfurile triunghiului,
@@ -610,36 +607,12 @@ Cu alte cuvinte, toate cele trei laturi ale triunghiului sunt congruente și pri
 
 {.todo} ÎN CURÂND – Constructing Midpoints and Perpendicular Bisectors
 
-    // A midpoint is a point on a line segment that divides it into two congruent
-    // segments. If A,B, and C are collinear, and AB=BC, then B is the midpoint of
-    // `bar(AC)`.
-    // 
-    // A line, segment, or ray that passes through a midpoint of another segment 
-    // at a right angle is called a __perpendicular bisector__. `bar(DE)` is the
-    // perpendicular bisector of `bar(AC)`, so `bar(AB) ~= bar(BC)` and `bar(AC) ⊥ bar(DE)`.
-
 ---
 > id: angle-bisector
 
 ### Bisectoarea unui unghi
 
 {.todo} ÎN CURÂND – Cum se construiește bisectoarea unui unghi
-
-    // When two rays have the same endpoint, an angle is created.
-    // 
-    // Here, `vec(BA)` and `vec(BC)` meet to form an angle. An angle is labeled with an
-    // “∠” symbol in front of the three letters used to label it. This angle can be
-    // labeled `/_ABC` or `/_CBA`. Always put the vertex (the common endpoint of the
-    // two rays) in the middle of the three points. It doesn’t matter which side point
-    // is written first.
-    // 
-    // An __angle bisector__ is a ray that divides an angle into two congruent angles,
-    // each having a measure exactly half of the original angle. Every angle has
-    // exactly one angle bisector.
-    // 
-    // Angle Bisector Theorem: If a point is on the bisector of an angle, then the
-    // point is equidistant from the sides of the angle.
-    // In other words, if BD←→ bisects ∠ABC,BE−→−⊥ED, and BF−→−⊥DF, then ED=DF.
 
 ---
 > id: impossible
@@ -781,7 +754,7 @@ Dar cu un pic de exercițiu, vei putea construi și tu!
 
 ::: column.sticky-video(width=360)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/crane.mp4" poster="images/crane.jpg" width=360 height=360 controls)
+    x-video(src="https://static.mathigon.org/videos/crane.mp4" poster="images/crane.jpg" width=360 height=360 controls)
 
 ::: column.grow
 {.step.active(data-t=0)} Ai nevoie doar de o bucată pătrată de hârtie. Începe prin a îndoi foaia 
@@ -896,7 +869,7 @@ origami pot fi incredibil de utile în tehnologie și inginerie:
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/space.mp4" poster="images/space.jpg" width=300 height=225 credit="© Brigham Young University")
+    x-video(src="https://static.mathigon.org/videos/space.mp4" poster="images/space.jpg" width=300 height=225 credit="© Brigham Young University")
 
 ::: column.grow
 
@@ -910,11 +883,6 @@ Tehnicile Origami permit panourilor solare să se “deschidă” atunci când a
 îndoituri bine gândite sunt incredibil de compacte și necesită foarte puține motoare
 și alte componente mecanice.
 
-    // One of these is the __Miura Map Fold__, which was invented by _Korio Miura_.
-    // The same is also true for the mirrors of telescopes in space. Larger mirrors
-    // can take better images. Engineers can use Origami to build large mirrors that
-    // can be folded up very efficiently when loaded onto rockets.
-
 :::
 
 ---
@@ -923,7 +891,7 @@ Tehnicile Origami permit panourilor solare să se “deschidă” atunci când a
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/stents.mp4" poster="images/stents.jpg" width=300 height=225 credit="© Virtual Point")
+    x-video(src="https://static.mathigon.org/videos/stents.mp4" poster="images/stents.jpg" width=300 height=225 credit="© Virtual Point")
 
 ::: column.grow
 
@@ -953,27 +921,7 @@ puteau fi implementate mai rapid decât modelele anterioare.
 Ele puteau fi folosite și pentru ajutor în caz de dezastre pentru a permite accesul rapid vehiculelor de urgență
 după cutremure sau tsunamiuri. Aceasta este imaginea unui prototip proiectat la Universitatea Hiroshima din Japonia.
 
-
 :::
-
-    // ---
-    // > id: origami-applications-2
-    // > goals: video
-    // 
-    // ::: column(width=300)
-    // 
-    // x-video(src="https://storage.googleapis.com/mathigon-videos/stadium.mp4" poster="images/stadium.jpg" width=300 height=225 credit="© Mercedes Benz Stadium")
-    // 
-    // ::: column.grow
-    // #### Stadium Roofs
-    // 
-    // Bridges are difficult to construct because they have to span large distances
-    // without intermediate support. This also is the case for the roofs of sports
-    // stadiums, which have to cover a large area without being supported by pillars.
-    // 
-    // The roof of the new Falcons Stadium in Atlanta consists of eight enormous
-    // modules that can twist to open or close.
-    // :::
 
 ---
 > id: origami-applications-4
@@ -981,7 +929,7 @@ după cutremure sau tsunamiuri. Aceasta este imaginea unui prototip proiectat la
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/marine.mp4" poster="images/marine.jpg" width=300 height=225 credit="© Harvard University")
+    x-video(src="https://static.mathigon.org/videos/marine.mp4" poster="images/marine.jpg" width=300 height=225 credit="© Harvard University")
 
 ::: column.grow
 
@@ -1023,7 +971,7 @@ Atunci când este deschisă dimensiunea aripii crește de 10 ori – cel mai mar
 
 ::: column(width=300)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/wing-animation.mp4" poster="images/wing-animation.jpg" width=300 height=170 credit="© ETH Zürich")
+    x-video(src="https://static.mathigon.org/videos/wing-animation.mp4" poster="images/wing-animation.jpg" width=300 height=170 credit="© ETH Zürich")
 
 :::
 
@@ -1046,7 +994,7 @@ panouri solare extensibile pentru sateliți sau poate chiar corturi ce se pot pl
 
 ::: column(width=320)
 
-    x-video(src="https://storage.googleapis.com/mathigon-videos/dna.mp4" poster="images/dna.jpg" width=320 height=240 credit="© PyMOL")
+    x-video(src="https://static.mathigon.org/videos/dna.mp4" poster="images/dna.jpg" width=320 height=240 credit="© PyMOL")
 
 ::: column.grow
 

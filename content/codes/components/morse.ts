@@ -4,21 +4,19 @@
 // ============================================================================
 
 
-import {CustomElementView, register, $N} from '@mathigon/boost';
+import {$N, CustomElementView, register} from '@mathigon/boost';
 import {beep} from './beep';
 import {MORSE_CODE} from './utilities';
 
 
-@register('x-morse', {attributes: ['char']})
+@register('x-morse')
 export class Morse extends CustomElementView {
   value: number[] = [];
 
   ready() {
-    this.redraw(this.attr('char'));
     this.setAttr('tabindex', '0');
-
     this.on('click', () => this.play());
-    this.on('attr:char', ({newVal}) => this.redraw(newVal));
+    this.onAttr('char', char => this.redraw(char));
   }
 
   redraw(char: string) {

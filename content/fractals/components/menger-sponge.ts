@@ -4,6 +4,7 @@
 // =============================================================================
 
 
+/// <reference types="THREE"/>
 import {register} from '@mathigon/boost';
 import {Solid} from '../../shared/components/solid';
 
@@ -20,12 +21,12 @@ for (const i of [-1, 0, 1]) {
 }
 
 function step(child: THREE.Object3D) {
-  child.scale.set(1/3, 1/3, 1/3);
+  child.scale.set(1 / 3, 1 / 3, 1 / 3);
   const obj = new THREE.Object3D();
 
   for (const p of positions) {
     const part = child.clone();
-    part.position.set(p[0]/3, p[1]/3, p[2]/3);
+    part.position.set(p[0] / 3, p[1] / 3, p[2] / 3);
     obj.add(part);
   }
 
@@ -33,8 +34,7 @@ function step(child: THREE.Object3D) {
 }
 
 
-
-@register('x-menger-sponge', {attributes: ['steps']})
+@register('x-menger-sponge')
 export class MengerSponge extends Solid {
 
   created() {
@@ -58,9 +58,9 @@ export class MengerSponge extends Solid {
       return cubes;
     });
 
-    this.on('attr:steps', (e) => {
+    this.onAttr('steps', (steps) => {
       for (const c of cubes) c.visible = false;
-      if (cubes[+e.newVal]) cubes[+e.newVal].visible = true;
+      if (cubes[+steps]) cubes[+steps].visible = true;
       if (this.scene) this.scene.draw();
     });
   }
